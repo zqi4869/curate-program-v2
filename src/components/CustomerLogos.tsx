@@ -31,7 +31,7 @@ const CustomerLogos = () => {
               <img
                 src={customer.logo}
                 alt={customer.name}
-                className="max-h-full w-auto object-contain grayscale opacity-80 hover:opacity-100 transition-opacity duration-300"
+                className="max-h-full w-auto object-contain opacity-90 hover:opacity-100 transition-opacity duration-300"
               />
             </li>
           ))}
