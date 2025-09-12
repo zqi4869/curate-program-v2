@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import wiasanoLogo from "@/assets/wiasano-logo.png";
 
 const Header = () => {
   return (
@@ -7,13 +8,11 @@ const Header = () => {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <div className="flex items-center">
-            <span className="text-2xl font-semibold text-foreground flex items-center">
-              wiasan
-              <span className="relative inline-flex items-center justify-center w-6 h-6 ml-0.5">
-                <span className="absolute w-6 h-6 bg-gradient-to-br from-orange-500 to-red-500 rounded-full"></span>
-                <span className="relative w-3 h-3 bg-foreground rounded-full"></span>
-              </span>
-            </span>
+            <img 
+              src={wiasanoLogo} 
+              alt="wiasano logo" 
+              className="h-8 w-auto"
+            />
           </div>
 
           {/* Navigation */}
