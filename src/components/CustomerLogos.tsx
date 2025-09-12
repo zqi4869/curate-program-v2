@@ -5,6 +5,7 @@ const CustomerLogos = () => {
     { name: "HeadHunt", logo: "H" },
     { name: "CryoOxy", logo: "C" },
     { name: "TechCorp", logo: "T" },
+    { name: "InnovateLab", logo: "I" },
   ];
 
   return (
@@ -12,7 +13,7 @@ const CustomerLogos = () => {
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="text-center">
           <p className="text-sm font-medium text-muted-foreground mb-8">
-            Customers who trust wiasano:
+            Trusted by 40+ businesses and marketers
           </p>
           
           <div className="flex flex-wrap justify-center items-center gap-8 lg:gap-12">
