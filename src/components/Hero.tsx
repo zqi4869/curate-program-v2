@@ -1,8 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { CheckCircle2, TrendingUp, Clock } from "lucide-react";
-import laptopScheduler from "@/assets/laptop-scheduler.png";
-import laptopBlog from "@/assets/laptop-blog.png";
-import tabletDashboard from "@/assets/tablet-dashboard.png";
+import dashboardTasksGoals from "@/assets/dashboard-tasks-goals.png";
 
 const Hero = () => {
   return (
@@ -47,34 +45,13 @@ const Hero = () => {
             </div>
           </div>
 
-          {/* Right Content - Images */}
+          {/* Right Content - Dashboard Image */}
           <div className="relative">
-            {/* Main laptop image */}
-            <div className="relative z-10">
-              <img
-                src={laptopScheduler}
-                alt="Marketing scheduler interface on laptop showing calendar view and task management dashboard"
-                className="w-full h-auto rounded-lg shadow-medium"
-              />
-            </div>
-
-            {/* Secondary laptop image */}
-            <div className="absolute -bottom-8 -left-8 lg:-left-12 z-20 w-3/4">
-              <img
-                src={laptopBlog}
-                alt="Blog content management interface showing article editor and publishing tools"
-                className="w-full h-auto rounded-lg shadow-medium"
-              />
-            </div>
-
-            {/* Small tablet/device in top right */}
-            <div className="absolute -top-4 -right-4 lg:-right-8 z-30 w-1/3">
-              <img
-                src={tabletDashboard}
-                alt="Marketing dashboard on tablet showing analytics and widgets"
-                className="w-full h-auto rounded-lg shadow-soft"
-              />
-            </div>
+            <img
+              src={dashboardTasksGoals}
+              alt="Dashboard interface showing task management, goals tracking, and productivity analytics"
+              className="w-full h-auto rounded-lg shadow-medium"
+            />
           </div>
         </div>
       </div>
