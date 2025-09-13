@@ -2,6 +2,7 @@ import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import CustomerLogos from "@/components/CustomerLogos";
 import FeatureOverview from "@/components/FeatureOverview";
+import GetStarted from "@/components/GetStarted";
 import Footer from "@/components/Footer";
 
 const Index = () => {
@@ -12,6 +13,7 @@ const Index = () => {
         <Hero />
         <CustomerLogos />
         <FeatureOverview />
+        <GetStarted />
       </main>
       <Footer />
     </div>
