@@ -110,7 +110,7 @@ const PricingPlans = () => {
                       {percentage}
                     </div>
                     <div className="flex items-center justify-center mb-3">
-                      <Check className="h-5 w-5 text-green-500 mr-2" />
+                      <Check className="h-6 w-6 md:h-7 md:w-7 text-green-500 mr-2" />
                       <span className="text-lg font-semibold text-foreground capitalize">
                         {description}
                       </span>
