@@ -1,4 +1,3 @@
-import { Card, CardContent } from "@/components/ui/card";
 import { Quote } from "lucide-react";
 import piusImage from "@/assets/testimonial_pius.png";
 import evaImage from "@/assets/testimonial_eva.png";
@@ -33,57 +32,55 @@ const Testimonials = () => {
   ];
 
   const StarRating = () => (
-    <div className="flex space-x-1 mb-4">
+    <div className="flex space-x-1 mb-2">
       {[...Array(5)].map((_, i) => (
-        <span key={i} className="text-yellow-400 text-lg">⭐</span>
+        <span key={i} className="text-yellow-400 text-sm">⭐</span>
       ))}
     </div>
   );
 
   return (
-    <section className="w-full py-16 bg-muted/30">
-      <div className="max-w-6xl mx-auto px-4">
+    <section className="w-full py-16 bg-background">
+      <div className="max-w-7xl mx-auto px-4">
         <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-foreground">
           Why marketers love wiasano
         </h2>
         
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid lg:grid-cols-3 gap-8 md:gap-12">
           {testimonials.map((testimonial) => (
-            <Card key={testimonial.id} className="relative group hover:shadow-lg transition-shadow duration-300">
-              <CardContent className="p-6">
-                <div className="space-y-4">
-                  <Quote className="h-8 w-8 text-primary/30 mb-4" />
-                  
-                  <StarRating />
-                  
-                  <h3 className="text-lg font-bold text-foreground leading-relaxed">
-                    "{testimonial.headline}"
-                  </h3>
-                  
-                  <p className="text-muted-foreground leading-relaxed text-sm">
-                    {testimonial.text}
-                  </p>
-                  
-                  <div className="flex items-center space-x-4 pt-4 border-t border-border">
-                    <div className="w-12 h-12 rounded-full overflow-hidden bg-muted flex-shrink-0">
-                      <img
-                        src={testimonial.image}
-                        alt={`${testimonial.name} profile photo`}
-                        className="w-full h-full object-cover"
-                      />
-                    </div>
-                    <div>
-                      <p className="font-semibold text-foreground text-sm">
-                        {testimonial.name}
-                      </p>
-                      <p className="text-muted-foreground text-xs">
-                        {testimonial.company}
-                      </p>
-                    </div>
-                  </div>
+            <div key={testimonial.id} className="space-y-4">
+              {/* Profile Section */}
+              <div className="flex items-start space-x-4">
+                <div className="w-16 h-16 rounded-full overflow-hidden bg-muted flex-shrink-0">
+                  <img
+                    src={testimonial.image}
+                    alt={`${testimonial.name} profile photo`}
+                    className="w-full h-full object-cover"
+                  />
                 </div>
-              </CardContent>
-            </Card>
+                <div className="flex-1">
+                  <h3 className="text-lg font-bold text-primary mb-1">
+                    {testimonial.name}
+                  </h3>
+                  <StarRating />
+                  <p className="text-muted-foreground text-sm">
+                    {testimonial.company}
+                  </p>
+                </div>
+                <Quote className="h-8 w-8 text-muted-foreground/30 flex-shrink-0" />
+              </div>
+              
+              {/* Quote Content */}
+              <div className="space-y-3">
+                <h4 className="text-lg font-bold text-foreground leading-relaxed">
+                  {testimonial.headline}
+                </h4>
+                
+                <p className="text-muted-foreground leading-relaxed text-sm">
+                  {testimonial.text}
+                </p>
+              </div>
+            </div>
           ))}
         </div>
       </div>
