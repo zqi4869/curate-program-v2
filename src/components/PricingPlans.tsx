@@ -170,7 +170,7 @@ const PricingPlans = () => {
         </div>
 
         {/* Disclaimer */}
-        <p className="text-center text-xs text-muted-foreground">
+        <p className="text-center text-sm text-muted-foreground">
           All prices exclude VAT. Subscription period: 12 months. Cancel anytime before renewal.
         </p>
       </div>
