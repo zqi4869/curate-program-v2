@@ -126,15 +126,15 @@ const PricingPlans = () => {
         {/* Pricing Cards */}
         <div className="grid lg:grid-cols-4 md:grid-cols-2 gap-6 mb-8">
           {plans.map((plan, index) => (
-            <Card key={index} className={`relative ${plan.popular ? 'ring-2 ring-primary' : ''} ${plan.free ? 'ring-2 ring-green-500' : ''}`}>
+            <Card key={index} className={`relative ${plan.popular ? 'ring-2 ring-red-500' : ''} ${plan.free ? 'ring-2 ring-green-500' : ''}`}>
               {plan.popular && (
-                <Badge className="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-primary text-primary-foreground">
-                  <Star className="h-3 w-3 mr-1" />
+                <Badge className="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-red-500 text-white px-4 py-2 text-sm font-bold">
+                  <Star className="h-4 w-4 mr-1" />
                   Most Popular
                 </Badge>
               )}
               {plan.free && (
-                <Badge className="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-green-500 text-white px-3 py-1 text-xs whitespace-nowrap">
+                <Badge className="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-green-500 text-white px-4 py-2 text-sm font-bold whitespace-nowrap">
                   Free Trial
                 </Badge>
               )}
