@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import { Globe } from "lucide-react";
 import wiasanoLogo from "@/assets/wiasano-logo.png";
 
 const Header = () => {
@@ -39,6 +40,11 @@ const Header = () => {
 
           {/* Action Buttons */}
           <div className="flex items-center space-x-4">
+            {/* Language Toggle */}
+            <div className="flex items-center space-x-1 text-foreground hover:text-primary transition-colors cursor-pointer">
+              <Globe className="h-4 w-4" />
+              <span className="text-sm font-medium">DE</span>
+            </div>
             <Button variant="outline" className="hidden md:inline-flex">
               Login
             </Button>
