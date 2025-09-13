@@ -134,8 +134,8 @@ const PricingPlans = () => {
                 </Badge>
               )}
               {plan.free && (
-                <Badge className="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-green-500 text-white">
-                  No Credit Card Required
+                <Badge className="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-green-500 text-white px-3 py-1 text-xs whitespace-nowrap">
+                  Free Trial
                 </Badge>
               )}
               
