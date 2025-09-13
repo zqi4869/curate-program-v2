@@ -96,13 +96,29 @@ const PricingPlans = () => {
           </p>
           
           {/* Benefits */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-6 mb-12">
-            {benefits.map((benefit, index) => (
-              <div key={index} className="flex items-center space-x-2">
-                <Check className="h-5 w-5 text-green-500 flex-shrink-0" />
-                <span className="text-sm font-medium text-foreground">{benefit}</span>
-              </div>
-            ))}
+          <div className="grid md:grid-cols-3 gap-6 mb-16 max-w-4xl mx-auto">
+            {benefits.map((benefit, index) => {
+              const percentage = benefit.match(/\d+%/)?.[0] || '';
+              const description = benefit.replace(/\d+% /, '');
+              
+              return (
+                <div key={index} className="relative p-8 rounded-2xl bg-gradient-to-br from-primary/5 to-primary/10 border border-primary/20 text-center group hover:shadow-lg transition-all duration-300 hover:scale-105">
+                  <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  <div className="relative z-10">
+                    <div className="text-5xl md:text-6xl font-black mb-3 bg-gradient-to-r from-primary to-primary/80 bg-clip-text text-transparent">
+                      {percentage}
+                    </div>
+                    <div className="flex items-center justify-center mb-3">
+                      <Check className="h-5 w-5 text-green-500 mr-2" />
+                      <span className="text-lg font-semibold text-foreground capitalize">
+                        {description}
+                      </span>
+                    </div>
+                    <div className="h-1 w-16 bg-gradient-to-r from-primary to-primary/60 rounded-full mx-auto" />
+                  </div>
+                </div>
+              );
+            })}
           </div>
         </div>
 
