@@ -24,8 +24,9 @@ const PricingPlans = () => {
         "Help Center"
       ],
       cta: "Start for free",
-      ctaVariant: "outline" as const,
-      popular: false
+      ctaVariant: "default" as const,
+      popular: false,
+      free: true
     },
     {
       name: "Smart Light",
@@ -125,11 +126,16 @@ const PricingPlans = () => {
         {/* Pricing Cards */}
         <div className="grid lg:grid-cols-4 md:grid-cols-2 gap-6 mb-8">
           {plans.map((plan, index) => (
-            <Card key={index} className={`relative ${plan.popular ? 'ring-2 ring-primary' : ''}`}>
+            <Card key={index} className={`relative ${plan.popular ? 'ring-2 ring-primary' : ''} ${plan.free ? 'ring-2 ring-green-500' : ''}`}>
               {plan.popular && (
                 <Badge className="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-primary text-primary-foreground">
                   <Star className="h-3 w-3 mr-1" />
                   Most Popular
+                </Badge>
+              )}
+              {plan.free && (
+                <Badge className="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-green-500 text-white">
+                  No Credit Card Required
                 </Badge>
               )}
               
