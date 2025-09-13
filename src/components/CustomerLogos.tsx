@@ -26,7 +26,7 @@ const CustomerLogos = () => {
           {customers.map((customer, index) => (
             <li
               key={index}
-              className="h-14 sm:h-12 flex items-center justify-center"
+              className="h-16 sm:h-20 lg:h-24 flex items-center justify-center"
             >
               <img
                 src={customer.logo}
