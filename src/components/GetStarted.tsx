@@ -41,7 +41,7 @@ const GetStarted = () => {
               <CardContent className="p-6">
                 <div className="space-y-4">
                   <div className="flex items-center space-x-3 mb-4">
-                    <div className="w-8 h-8 bg-primary text-primary-foreground rounded-full flex items-center justify-center text-sm font-semibold">
+                    <div className="w-10 h-10 min-w-[2.5rem] min-h-[2.5rem] bg-primary text-primary-foreground rounded-full flex items-center justify-center text-base font-bold aspect-square">
                       {step.number}
                     </div>
                     <h3 className="text-xl font-semibold text-foreground">
