@@ -85,7 +85,7 @@ const PricingPlans = () => {
   ];
 
   return (
-    <section className="w-full py-16 bg-background">
+    <section className="w-full py-16 bg-pricing">
       <div className="max-w-7xl mx-auto px-4">
         {/* Header */}
         <div className="text-center mb-12">
@@ -128,7 +128,7 @@ const PricingPlans = () => {
           {plans.map((plan, index) => (
             <Card key={index} className={`relative ${plan.popular ? 'ring-2 ring-red-500' : ''} ${plan.free ? 'ring-2 ring-green-500' : ''}`}>
               {plan.popular && (
-                <Badge className="absolute -top-6 left-1/2 transform -translate-x-1/2 bg-red-500 text-white px-4 py-2 text-sm font-bold flex items-center whitespace-nowrap">
+                <Badge className="absolute -top-6 left-1/2 transform -translate-x-1/2 bg-primary text-primary-foreground px-4 py-2 text-sm font-bold flex items-center whitespace-nowrap">
                   <Star className="h-4 w-4 mr-1" />
                   Most Popular
                 </Badge>

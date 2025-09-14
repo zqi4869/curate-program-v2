@@ -11,7 +11,7 @@ const Hero = () => {
           <div className="space-y-8 lg:col-span-2">
             {/* Main Headline */}
             <h1 className="text-4xl lg:text-5xl xl:text-6xl font-bold text-foreground leading-relaxed lg:leading-loose">
-              From strategy to execution: Your AI-powered marketing assistant.
+              From strategy to execution: Your <span className="text-primary">AI-powered</span> marketing assistant.
             </h1>
 
             {/* Subheadline */}

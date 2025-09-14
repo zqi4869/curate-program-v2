@@ -65,6 +65,10 @@ export default {
       backgroundImage: {
         "hero-gradient": "var(--hero-gradient)",
       },
+      backgroundColor: {
+        "testimonials": "hsl(var(--testimonials-bg))",
+        "pricing": "hsl(var(--pricing-bg))",
+      },
       boxShadow: {
         soft: "var(--shadow-soft)",
         medium: "var(--shadow-medium)",

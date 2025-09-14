@@ -17,12 +17,12 @@ All colors MUST be HSL.
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
 
-    /* Brand colors - Blue primary from the design */
-    --primary: 222 100% 62%;
+    /* MarketPro orange-red primary color */
+    --primary: 14 91% 56%;
     --primary-foreground: 0 0% 100%;
 
     /* Brand red accent for the wiasano dot */
-    --brand-red: 0 84% 60%;
+    --brand-red: 14 91% 56%;
     --brand-red-foreground: 0 0% 100%;
 
     --secondary: 210 40% 96.1%;
@@ -44,7 +44,9 @@ All colors MUST be HSL.
     --radius: 0.5rem;
     
     /* Custom design tokens */
-    --hero-gradient: linear-gradient(135deg, hsl(var(--background)), hsl(var(--muted)));
+    --hero-gradient: linear-gradient(135deg, hsl(330 100% 98%), hsl(0 0% 100%));
+    --testimonials-bg: 220 13% 95%;
+    --pricing-bg: 210 17% 96%;
     --shadow-soft: 0 4px 6px -1px rgb(0 0 0 / 0.1);
     --shadow-medium: 0 10px 15px -3px rgb(0 0 0 / 0.1);
     --transition-smooth: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);

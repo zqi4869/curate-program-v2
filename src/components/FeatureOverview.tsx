@@ -52,7 +52,9 @@ const FeatureOverview = () => {
                 <CardContent className="p-6">
                   <div className="space-y-4">
                     <div className="flex items-center space-x-3">
-                      <IconComponent className="w-5 h-5 text-primary" />
+                      <div className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center">
+                        <IconComponent className="w-4 h-4 text-primary" />
+                      </div>
                       <h3 className="text-xl font-semibold text-foreground">
                         {feature.title}
                       </h3>
