@@ -92,7 +92,7 @@ const Footer = () => {
       <div className="border-t border-slate-800 py-6">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <p className="text-center text-slate-400 text-sm">
-            © 2023 wiasano GmbH. All rights reserved.
+            © 2025 wiasano GmbH. All rights reserved.
           </p>
         </div>
       </div>
