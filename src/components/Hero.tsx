@@ -6,9 +6,9 @@ const Hero = () => {
   return (
     <section className="w-full bg-hero-gradient py-16 lg:py-24">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+        <div className="grid lg:grid-cols-5 gap-12 lg:gap-16 items-center">
           {/* Left Content */}
-          <div className="space-y-8">
+          <div className="space-y-8 lg:col-span-2">
             {/* Main Headline */}
             <h1 className="text-4xl lg:text-5xl xl:text-6xl font-bold text-foreground leading-relaxed lg:leading-loose">
               From strategy to execution: Your AI-powered marketing assistant.
@@ -46,7 +46,7 @@ const Hero = () => {
           </div>
 
           {/* Right Content - Dashboard Image */}
-          <div className="relative">
+          <div className="relative lg:col-span-3">
             <img
               src={dashboardTasksGoals}
               alt="Dashboard interface showing task management, goals tracking, and productivity analytics"
