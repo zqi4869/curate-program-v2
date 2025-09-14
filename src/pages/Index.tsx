@@ -6,6 +6,7 @@ import GetStarted from "@/components/GetStarted";
 import Testimonials from "@/components/Testimonials";
 import PricingPlans from "@/components/PricingPlans";
 import Footer from "@/components/Footer";
+import FloatingCTA from "@/components/FloatingCTA";
 
 const Index = () => {
   return (
@@ -20,6 +21,7 @@ const Index = () => {
         <PricingPlans />
       </main>
       <Footer />
+      <FloatingCTA />
     </div>
   );
 };
