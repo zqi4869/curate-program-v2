@@ -11,6 +11,7 @@ const FloatingCTA = () => {
   const [isHidden, setIsHidden] = useState(false);
   const [showAnimation, setShowAnimation] = useState(false);
   const [showExitIntent, setShowExitIntent] = useState(false);
+  const [exitIntentCooldown, setExitIntentCooldown] = useState(false);
   const { toast } = useToast();
 
   // Check session storage on mount
@@ -18,6 +19,7 @@ const FloatingCTA = () => {
     const hiddenUntil = sessionStorage.getItem('floatingCTA-hidden');
     const animationShown = sessionStorage.getItem('floatingCTA-animation-shown');
     const exitIntentShown = sessionStorage.getItem('floatingCTA-exit-intent-shown');
+    const exitIntentClosed = sessionStorage.getItem('floatingCTA-exit-intent-closed');
     
     if (hiddenUntil) {
       setIsHidden(true);
@@ -37,17 +39,29 @@ const FloatingCTA = () => {
 
     // Exit intent detection (desktop only)
     const handleMouseLeave = (e: MouseEvent) => {
-      if (!exitIntentShown && e.clientY <= 0 && window.innerWidth >= 768) {
+      // More precise exit intent detection
+      if (
+        !exitIntentShown && 
+        !exitIntentClosed &&
+        !exitIntentCooldown && 
+        e.clientY <= 0 && 
+        e.target === document.documentElement &&
+        window.innerWidth >= 768
+      ) {
         setShowExitIntent(true);
+        setExitIntentCooldown(true);
         sessionStorage.setItem('floatingCTA-exit-intent-shown', 'true');
+        
+        // Add cooldown to prevent rapid re-triggering
+        setTimeout(() => setExitIntentCooldown(false), 2000);
       }
     };
 
-    if (!exitIntentShown && window.innerWidth >= 768) {
+    if (!exitIntentShown && !exitIntentClosed && window.innerWidth >= 768) {
       document.addEventListener('mouseleave', handleMouseLeave);
       return () => document.removeEventListener('mouseleave', handleMouseLeave);
     }
-  }, []);
+  }, [exitIntentCooldown]);
 
   const handleFloatingButtonClick = () => {
     setIsCardOpen(true);
@@ -78,6 +92,8 @@ const FloatingCTA = () => {
 
   const handleExitIntentClose = () => {
     setShowExitIntent(false);
+    // Ensure it never shows again in this session
+    sessionStorage.setItem('floatingCTA-exit-intent-closed', 'true');
   };
 
   const handleExitIntentStart = () => {
@@ -86,6 +102,8 @@ const FloatingCTA = () => {
       duration: 2000,
     });
     setShowExitIntent(false);
+    // Mark as completed to prevent re-showing
+    sessionStorage.setItem('floatingCTA-exit-intent-closed', 'true');
   };
 
   if (isHidden) return null;
