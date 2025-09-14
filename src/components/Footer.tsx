@@ -10,7 +10,7 @@ const Footer = () => {
         <div className="max-w-7xl mx-auto px-6 lg:px-8 text-center">
           <h3 className="text-2xl font-bold mb-4">Ready to get started?</h3>
           <p className="text-slate-300 mb-6">Join thousands of businesses already growing with wiasano</p>
-          <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 text-lg font-semibold">
+          <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-3 text-lg font-semibold">
             Try it free
           </Button>
         </div>
@@ -75,9 +75,9 @@ const Footer = () => {
                   <Input 
                     type="email" 
                     placeholder="Enter your email"
-                    className="bg-slate-800 border-slate-700 text-white placeholder-slate-400 focus:border-blue-500"
+                    className="bg-slate-800 border-slate-700 text-white placeholder-slate-400 focus:border-primary"
                   />
-                  <Button className="bg-blue-600 hover:bg-blue-700 whitespace-nowrap">
+                  <Button className="bg-primary hover:bg-primary/90 whitespace-nowrap">
                     Subscribe
                   </Button>
                 </div>
