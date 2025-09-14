@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { CheckCircle2, TrendingUp, Clock } from "lucide-react";
-import dashboardTasksGoals from "@/assets/dashboard-tasks-goals.png";
+import dashboardNew from "@/assets/dashboard-new.png";
 
 const Hero = () => {
   return (
@@ -48,7 +48,7 @@ const Hero = () => {
           {/* Right Content - Dashboard Image */}
           <div className="relative lg:col-span-3">
             <img
-              src={dashboardTasksGoals}
+              src={dashboardNew}
               alt="Dashboard interface showing task management, goals tracking, and productivity analytics"
               className="w-full h-auto rounded-lg shadow-medium"
             />
