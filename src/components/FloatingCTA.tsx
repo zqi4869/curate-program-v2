@@ -12,6 +12,7 @@ const FloatingCTA = () => {
   const [showAnimation, setShowAnimation] = useState(false);
   const [showExitIntent, setShowExitIntent] = useState(false);
   const [exitIntentCooldown, setExitIntentCooldown] = useState(false);
+  const [mouseY, setMouseY] = useState(0);
   const { toast } = useToast();
 
   // Check session storage on mount
@@ -38,14 +39,35 @@ const FloatingCTA = () => {
     }
 
     // Exit intent detection (desktop only)
-    const handleMouseLeave = (e: MouseEvent) => {
-      // More precise exit intent detection
+    const handleMouseMove = (e: MouseEvent) => {
+      setMouseY(e.clientY);
+    };
+
+    const handleMouseOut = (e: MouseEvent) => {
+      // Improved exit intent detection
+      if (
+        !exitIntentShown && 
+        !exitIntentClosed &&
+        !exitIntentCooldown && 
+        (e.clientY <= 0 || (mouseY > 0 && e.clientY <= 10)) &&
+        window.innerWidth >= 768
+      ) {
+        setShowExitIntent(true);
+        setExitIntentCooldown(true);
+        sessionStorage.setItem('floatingCTA-exit-intent-shown', 'true');
+        
+        // Add cooldown to prevent rapid re-triggering
+        setTimeout(() => setExitIntentCooldown(false), 2000);
+      }
+    };
+
+    const handleDocumentMouseLeave = (e: MouseEvent) => {
+      // Additional exit intent trigger for mouseleave from document
       if (
         !exitIntentShown && 
         !exitIntentClosed &&
         !exitIntentCooldown && 
         e.clientY <= 0 && 
-        e.target === document.documentElement &&
         window.innerWidth >= 768
       ) {
         setShowExitIntent(true);
@@ -58,10 +80,17 @@ const FloatingCTA = () => {
     };
 
     if (!exitIntentShown && !exitIntentClosed && window.innerWidth >= 768) {
-      document.addEventListener('mouseleave', handleMouseLeave);
-      return () => document.removeEventListener('mouseleave', handleMouseLeave);
+      document.addEventListener('mousemove', handleMouseMove);
+      document.addEventListener('mouseout', handleMouseOut);
+      document.addEventListener('mouseleave', handleDocumentMouseLeave);
+      
+      return () => {
+        document.removeEventListener('mousemove', handleMouseMove);
+        document.removeEventListener('mouseout', handleMouseOut);
+        document.removeEventListener('mouseleave', handleDocumentMouseLeave);
+      };
     }
-  }, [exitIntentCooldown]);
+  }, [exitIntentCooldown, mouseY]);
 
   const handleFloatingButtonClick = () => {
     setIsCardOpen(true);
